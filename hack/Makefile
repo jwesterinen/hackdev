@@ -18,13 +18,18 @@
 #  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 #  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 #  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+#  Note: the hack soft core requires an application in the form of a .hack file
+#        which must be specified on the make command line, as follows:
+#          > make <target> app=<app name>  (no .hack extension is necessary nor allowed)
+#        example:  make install app=calc
 
 PROJ = hack
 
 PIN_DEF = pins.pcf
 DEVICE = lp8k
 
-all: $(PROJ).rpt $(PROJ).bin
+all: rom.hack $(PROJ).rpt $(PROJ).bin
 
 %.blif: %.v
 	yosys -p 'synth_ice40 -top $(PROJ) -blif $@' $<
@@ -53,15 +58,18 @@ all: $(PROJ).rpt $(PROJ).bin
 %_syntb.vcd: %_syntb
 	vvp -N $< +vcd=$@
 
-prog: $(PROJ).bin
+install: rom.hack $(PROJ).bin
 	tinyprog -p $<
 
-sudo-prog: $(PROJ).bin
-	@echo 'Executing prog as root!!!'
+sudo-install: rom.hack $(PROJ).bin
+	@echo 'Executing install as root!!!'
 	sudo tinyprog -p $<
 
 clean:
-	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).rpt $(PROJ).bin
+	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).rpt $(PROJ).bin rom.hack
+
+rom.hack:	
+	cp $(app).hack rom.hack
 
 .SECONDARY:
-.PHONY: all prog clean
+.PHONY: all install sudo-install clean

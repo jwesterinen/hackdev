@@ -16,7 +16,7 @@ $(TARGET): $(OBJ)
 clean:
 	rm -f $(TARGET) *.hasm *.ho
 
-install:
+install: $(TARGET)
 	cp $(TARGET) ../../hack
 
 .PHONY: clean install uninstall

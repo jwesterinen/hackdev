@@ -36,9 +36,10 @@ loaded onto the TinyFPGA BX.  An image is created as follows:
     3. Assemble the .hasm file with the Hack assembler which will result in a 
        executable Hack binary code, .hack, file
     4. Copy the .hack file into the Hack verilog source directory.
-    5. In the hack source directory, build the .hack file using the "run" build
-       script, which compiles the TinyFPGA BX Verilog into an FPGA image and
-       downloads it into the TinyFPGA in the hack computer.
+    5. In the hack source directory, build the .hack file using the 
+       "install app=<app name> target of the Makefile, which compiles the TinyFPGA 
+       BX Verilog into an FPGA image and downloads it into the TinyFPGA in the hack 
+       computer.
 
 
 EXAMPLES
@@ -50,5 +51,5 @@ the example is described as follows:
   - make
   - make install
   - cd ../../hack
-  - ./run <app_name>.hack
+  - make install app=<app name>
   

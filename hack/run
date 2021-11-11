@@ -1,4 +1,0 @@
-cp $1 rom.hack
-make clean
-make prog
-

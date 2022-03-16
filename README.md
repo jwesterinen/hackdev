@@ -20,7 +20,7 @@ Note that in addition to this project, the TinyFPGA BX Verilog compiler must be
 acquired separately.  It can be found <here>.
 
 
-## BUILD ENVIRONMENT SETUP
+## Build Environment Setup
 
 The build environment is created as follows:
  1. Install the TinyFPGA verilog tools.
@@ -29,7 +29,7 @@ The build environment is created as follows:
  4. sudo make install (uninstall to remove the Hack tools)
 
 
-## HACK IMAGE CREATION
+## HACK Image Creation
     
 A Hack application must be built then used to create the FPGA image that will be
 loaded onto the TinyFPGA BX.  An image is created as follows:
@@ -44,7 +44,7 @@ loaded onto the TinyFPGA BX.  An image is created as follows:
     BX Verilog into an FPGA image and downloads it into the TinyFPGA in the hack computer.
 
 
-## EXAMPLES
+## Examples
 
 The examples subdirectory contains examples of Hack applications.  Each example
 has a make file that will build a .hack application image, steps 1-3 above.  The

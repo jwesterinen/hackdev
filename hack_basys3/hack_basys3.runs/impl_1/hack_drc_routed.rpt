@@ -1,0 +1,48 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Sun Sep 18 12:49:38 2022
+| Host         : thule running 64-bit Ubuntu 20.04.5 LTS
+| Command      : report_drc -file hack_drc_routed.rpt -pb hack_drc_routed.pb -rpx hack_drc_routed.rpx
+| Design       : hack
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Fully Routed
+------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 2
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| PDRC-153    | Warning  | Gated clock check                                           | 1          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
++-------------+----------+-------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net mem/screen/nolabel_line36/pixel_reg_reg[0]_0 is a gated clock net sourced by a combinational pin mem/screen/nolabel_line36/ram_reg_0_i_1/O, cell mem/screen/nolabel_line36/ram_reg_0_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT mem/screen/nolabel_line36/ram_reg_0_i_1 is driving clock pin of 18 cells. This could lead to large hold time violations. Involved cells are:
+mem/screen/frameBuffer/ram_reg_0, mem/screen/frameBuffer/ram_reg_1, mem/screen/frameBuffer/ram_reg_2, mem/screen/frameBuffer/ram_reg_3, mem/screen/pixelBit_reg, mem/screen/vgaAddr_reg[0], mem/screen/vgaAddr_reg[10], mem/screen/vgaAddr_reg[11], mem/screen/vgaAddr_reg[12], mem/screen/vgaAddr_reg[1], mem/screen/vgaAddr_reg[2], mem/screen/vgaAddr_reg[3], mem/screen/vgaAddr_reg[4], mem/screen/vgaAddr_reg[5], mem/screen/vgaAddr_reg[6] (the first 15 of 18 listed)
+Related violations: <none>
+
+

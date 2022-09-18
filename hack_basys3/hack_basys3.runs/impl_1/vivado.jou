@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Sep 18 12:48:15 2022
+# Process ID: 563236
+# Current directory: /home/jeff/devel/hackdev/hack_basys3/hack_basys3.runs/impl_1
+# Command line: vivado -log hack.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source hack.tcl -notrace
+# Log file: /home/jeff/devel/hackdev/hack_basys3/hack_basys3.runs/impl_1/hack.vdi
+# Journal file: /home/jeff/devel/hackdev/hack_basys3/hack_basys3.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source hack.tcl -notrace

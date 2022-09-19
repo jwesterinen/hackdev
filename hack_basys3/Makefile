@@ -17,7 +17,7 @@ $(SRC_DIR)/hack.v $(SRC_DIR)/keyboard.v $(SRC_DIR)/prescaler.v $(SRC_DIR)/ram.v 
 all: $(TARGET)
 
 $(TARGET): $(SOURCES) $(XDC_FILE)
-    mkdir -p build
+	mkdir -p build
 	# Use Xilinx Vivado to compile the sources to a .bit file
 	/tools/Xilinx/Vivado/2019.1/bin/vivado -mode tcl < $(PROJ).tcl > $(BUILD_DIR)/$(STATUS_FILE)
 

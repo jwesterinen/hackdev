@@ -1,0 +1,511 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Sep 18 12:47:31 2022
+# Process ID: 562967
+# Current directory: /home/jeff/devel/hackdev/hack_basys3/hack_basys3.runs/synth_1
+# Command line: vivado -log hack.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hack.tcl
+# Log file: /home/jeff/devel/hackdev/hack_basys3/hack_basys3.runs/synth_1/hack.vds
+# Journal file: /home/jeff/devel/hackdev/hack_basys3/hack_basys3.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source hack.tcl -notrace
+Command: synth_design -top hack -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 563070 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1696.859 ; gain = 152.719 ; free physical = 936 ; free virtual = 11850
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'hack' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/hack.v:17]
+INFO: [Synth 8-6157] synthesizing module 'prescaler' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/prescaler.v:1]
+	Parameter N bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'prescaler' (1#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/prescaler.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/rom.v:1]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 15 - type: integer 
+	Parameter MEM_INIT_FILE bound to: rom.hack - type: string 
+INFO: [Synth 8-3876] $readmem data file 'rom.hack' is read successfully [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/rom.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (2#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/rom.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CPU' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/cpu.v:26]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/alu.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (3#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/alu.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'CPU' (4#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/cpu.v:26]
+INFO: [Synth 8-6157] synthesizing module 'memory' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/memory.v:28]
+INFO: [Synth 8-6157] synthesizing module 'RamSinglePort' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/ram.v:2]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 14 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RamSinglePort' (5#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/ram.v:2]
+INFO: [Synth 8-6157] synthesizing module 'screen' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/screen.v:4]
+INFO: [Synth 8-6157] synthesizing module 'RamDualPort' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/ramdp.v:2]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 13 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RamDualPort' (6#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/ramdp.v:2]
+INFO: [Synth 8-6157] synthesizing module 'vga' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/vga.v:23]
+	Parameter H_DISPLAY bound to: 640 - type: integer 
+	Parameter H_L_BORDER bound to: 48 - type: integer 
+	Parameter H_R_BORDER bound to: 16 - type: integer 
+	Parameter H_RETRACE bound to: 96 - type: integer 
+	Parameter H_MAX bound to: 799 - type: integer 
+	Parameter START_H_RETRACE bound to: 656 - type: integer 
+	Parameter END_H_RETRACE bound to: 751 - type: integer 
+	Parameter V_DISPLAY bound to: 480 - type: integer 
+	Parameter V_T_BORDER bound to: 10 - type: integer 
+	Parameter V_B_BORDER bound to: 33 - type: integer 
+	Parameter V_RETRACE bound to: 2 - type: integer 
+	Parameter V_MAX bound to: 524 - type: integer 
+	Parameter START_V_RETRACE bound to: 513 - type: integer 
+	Parameter END_V_RETRACE bound to: 514 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga' (7#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/vga.v:23]
+WARNING: [Synth 8-5788] Register vgaAddr_reg in module screen is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/screen.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'screen' (8#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/screen.v:4]
+INFO: [Synth 8-6157] synthesizing module 'keyboard' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/keyboard.v:22]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/keyboard.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'keyboard' (9#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/keyboard.v:22]
+INFO: [Synth 8-6157] synthesizing module 'ioports' [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/ioports.v:1]
+WARNING: [Synth 8-567] referenced signal 'GPIO' should be on the sensitivity list [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/ioports.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'ioports' (10#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/ioports.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (11#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/memory.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'hack' (12#1) [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/sources_1/imports/hack_basys3/hack.v:17]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1750.609 ; gain = 206.469 ; free physical = 965 ; free virtual = 11873
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1759.516 ; gain = 215.375 ; free physical = 963 ; free virtual = 11872
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1759.516 ; gain = 215.375 ; free physical = 963 ; free virtual = 11872
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/constrs_1/imports/hack_basys3/hack_basys3.xdc]
+Finished Parsing XDC File [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/constrs_1/imports/hack_basys3/hack_basys3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/jeff/devel/hackdev/hack_basys3/hack_basys3.srcs/constrs_1/imports/hack_basys3/hack_basys3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/hack_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/hack_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1936.203 ; gain = 0.000 ; free physical = 891 ; free virtual = 11800
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1936.203 ; gain = 0.000 ; free physical = 891 ; free virtual = 11800
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 993 ; free virtual = 11902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 993 ; free virtual = 11902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 993 ; free virtual = 11902
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3971] The signal "RamDualPort:/ram_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 991 ; free virtual = 11901
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     15 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 6     
+	               15 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---RAMs : 
+	             128K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 12    
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module prescaler 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 6     
+Module CPU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     15 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	               15 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module RamDualPort 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 2     
++---RAMs : 
+	             128K Bit         RAMs := 1     
+Module vga 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module screen 
+Detailed RTL Component Info : 
++---Registers : 
+	               13 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module keyboard 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  12 Input      1 Bit        Muxes := 2     
+Module ioports 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+Module memory 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6040] Register cpu/PC_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6014] Unused sequential element mem/screen/frameBuffer/ram_reg was removed. 
+INFO: [Synth 8-3886] merging instance 'mem/keyboard/buffer_reg[8]' (FDRE) to 'mem/keyboard/buffer_reg[9]'
+INFO: [Synth 8-3886] merging instance 'mem/keyboard/buffer_reg[9]' (FDRE) to 'mem/keyboard/buffer_reg[10]'
+INFO: [Synth 8-3886] merging instance 'mem/keyboard/buffer_reg[10]' (FDRE) to 'mem/keyboard/buffer_reg[11]'
+INFO: [Synth 8-3886] merging instance 'mem/keyboard/buffer_reg[11]' (FDRE) to 'mem/keyboard/buffer_reg[12]'
+INFO: [Synth 8-3886] merging instance 'mem/keyboard/buffer_reg[12]' (FDRE) to 'mem/keyboard/buffer_reg[13]'
+INFO: [Synth 8-3886] merging instance 'mem/keyboard/buffer_reg[13]' (FDRE) to 'mem/keyboard/buffer_reg[14]'
+INFO: [Synth 8-3886] merging instance 'mem/keyboard/buffer_reg[14]' (FDRE) to 'mem/keyboard/buffer_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem/keyboard/buffer_reg[15] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 996 ; free virtual = 11903
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|ROM         | p_0_out    | 1024x16       | LUT            | 
+|hack        | p_0_out    | 1024x16       | LUT            | 
++------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping  Report (see note below)
++-------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name  | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|RamDualPort: | ram_reg    | 8 K x 16(READ_FIRST)   | W | R | 8 K x 16(READ_FIRST)   | W | R | Port A and B     | 0      | 4      | 
++-------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+--------------------+-----------+----------------------+--------------------+
+|Module Name | RTL Object         | Inference | Size (Depth x Width) | Primitives         | 
++------------+--------------------+-----------+----------------------+--------------------+
+|hack        | mem/ram16k/ram_reg | Implied   | 16 K x 16            | RAM256X1S x 1024   | 
++------------+--------------------+-----------+----------------------+--------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance i_0/mem/screen/frameBuffer/ram_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/mem/screen/frameBuffer/ram_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/mem/screen/frameBuffer/ram_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/mem/screen/frameBuffer/ram_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/mem/screen/frameBuffer/ram_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/mem/screen/frameBuffer/ram_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/mem/screen/frameBuffer/ram_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/mem/screen/frameBuffer/ram_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 885 ; free virtual = 11791
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 881 ; free virtual = 11788
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++-------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name  | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|RamDualPort: | ram_reg    | 8 K x 16(READ_FIRST)   | W | R | 8 K x 16(READ_FIRST)   | W | R | Port A and B     | 0      | 4      | 
++-------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping  Report
++------------+--------------------+-----------+----------------------+--------------------+
+|Module Name | RTL Object         | Inference | Size (Depth x Width) | Primitives         | 
++------------+--------------------+-----------+----------------------+--------------------+
+|hack        | mem/ram16k/ram_reg | Implied   | 16 K x 16            | RAM256X1S x 1024   | 
++------------+--------------------+-----------+----------------------+--------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance mem/screen/frameBuffer/ram_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance mem/screen/frameBuffer/ram_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance mem/screen/frameBuffer/ram_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance mem/screen/frameBuffer/ram_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance mem/screen/frameBuffer/ram_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance mem/screen/frameBuffer/ram_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance mem/screen/frameBuffer/ram_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance mem/screen/frameBuffer/ram_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 877 ; free virtual = 11784
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 908 ; free virtual = 11815
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 908 ; free virtual = 11815
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 907 ; free virtual = 11814
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 907 ; free virtual = 11814
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 907 ; free virtual = 11814
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 907 ; free virtual = 11814
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     3|
+|2     |CARRY4    |    10|
+|3     |LUT1      |    11|
+|4     |LUT2      |    46|
+|5     |LUT3      |   292|
+|6     |LUT4      |    23|
+|7     |LUT5      |    70|
+|8     |LUT6      |   725|
+|9     |MUXF7     |   228|
+|10    |MUXF8     |   113|
+|11    |RAM256X1S |  1024|
+|12    |RAMB36E1  |     4|
+|13    |FDCE      |    25|
+|14    |FDRE      |   373|
+|15    |IBUF      |    24|
+|16    |IOBUF     |     8|
+|17    |OBUF      |    30|
++------+----------+------+
+
+Report Instance Areas: 
++------+---------------------+--------------+------+
+|      |Instance             |Module        |Cells |
++------+---------------------+--------------+------+
+|1     |top                  |              |  3009|
+|2     |  cpu                |CPU           |  1315|
+|3     |    alu              |ALU           |   537|
+|4     |  mem                |memory        |  1625|
+|5     |    ioports          |ioports       |    40|
+|6     |    keyboard         |keyboard      |    47|
+|7     |    ram16k           |RamSinglePort |  1446|
+|8     |    screen           |screen        |    92|
+|9     |      frameBuffer    |RamDualPort   |     9|
+|10    |      nolabel_line36 |vga           |    69|
+|11    |  ps2                |prescaler     |     4|
++------+---------------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 907 ; free virtual = 11814
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1936.203 ; gain = 215.375 ; free physical = 953 ; free virtual = 11860
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1936.203 ; gain = 392.062 ; free physical = 953 ; free virtual = 11860
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1387 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1952.047 ; gain = 0.000 ; free physical = 901 ; free virtual = 11807
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1032 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+  RAM256X1S => RAM256X1S (MUXF7, MUXF7, MUXF8, RAMS64E, RAMS64E, RAMS64E, RAMS64E): 1024 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+63 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1952.047 ; gain = 589.039 ; free physical = 991 ; free virtual = 11897
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1952.047 ; gain = 0.000 ; free physical = 991 ; free virtual = 11897
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/jeff/devel/hackdev/hack_basys3/hack_basys3.runs/synth_1/hack.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file hack_utilization_synth.rpt -pb hack_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Sep 18 12:48:13 2022...

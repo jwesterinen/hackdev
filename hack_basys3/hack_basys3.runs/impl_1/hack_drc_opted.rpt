@@ -1,0 +1,42 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Sun Sep 18 12:48:51 2022
+| Host         : thule running 64-bit Ubuntu 20.04.5 LTS
+| Command      : report_drc -file hack_drc_opted.rpt -pb hack_drc_opted.pb -rpx hack_drc_opted.rpx
+| Design       : hack
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 1
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
++-------------+----------+-------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT mem/screen/nolabel_line36/ram_reg_0_i_1 is driving clock pin of 18 cells. This could lead to large hold time violations. Involved cells are:
+mem/screen/frameBuffer/ram_reg_0, mem/screen/frameBuffer/ram_reg_1, mem/screen/frameBuffer/ram_reg_2, mem/screen/frameBuffer/ram_reg_3, mem/screen/pixelBit_reg, mem/screen/vgaAddr_reg[0], mem/screen/vgaAddr_reg[10], mem/screen/vgaAddr_reg[11], mem/screen/vgaAddr_reg[12], mem/screen/vgaAddr_reg[1], mem/screen/vgaAddr_reg[2], mem/screen/vgaAddr_reg[3], mem/screen/vgaAddr_reg[4], mem/screen/vgaAddr_reg[5], mem/screen/vgaAddr_reg[6] (the first 15 of 18 listed)
+Related violations: <none>
+
+

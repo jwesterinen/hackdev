@@ -158,6 +158,41 @@ void GenAlu(const char *mod, const char *comment)
 		fprintf(yyout, "    M=1\n");
 		fprintf(yyout, "(LT%d)\n", labelId);
 	}
+	else if (!strcmp(mod, "~"))
+	{		    
+	    // replace TOS with its bitwise inverse
+		fprintf(yyout, "    @SP\n");                // put TOS into D
+		fprintf(yyout, "    A=M\n");
+		fprintf(yyout, "    D=M\n");
+		fprintf(yyout, "    M=!D\n");               // load TOS with the bitwise negation (NOT (!) in Hack ISA) of D 
+	}
+	else if (!strcmp(mod, ALU_NEG))
+	{		    
+	    // replace TOS with its negative value
+		fprintf(yyout, "    @SP\n");                // put TOS into D
+		fprintf(yyout, "    A=M\n");
+		fprintf(yyout, "    D=M\n");
+		fprintf(yyout, "    M=-D\n");               // load TOS with the negative value of D 
+	}
+	else if (!strcmp(mod, "&&") || !strcmp(mod, "||"))
+	{
+	    // x and y will only ever be -1 or 0
+		fprintf(yyout, "    @SP\n");             // pop y
+		fprintf(yyout, "    M=M-1\n");
+		fprintf(yyout, "    A=M+1\n");
+		fprintf(yyout, "    D=M\n");
+		fprintf(yyout, "    A=A-1\n");
+        if (!strcmp(mod, "&&"))
+		{
+	        // this will only result in -1 (true) iff x = y = -1
+			fprintf(yyout, "    M=D&M\n");	    // TOS = x & y
+		}
+		else if (!strcmp(mod, "||"))
+		{
+	        // this will only result in 0 (false) iff x = y = 0
+			fprintf(yyout, "    M=D|M\n");	    // TOS = x | y
+		}
+	}
 	else if (!strcmp(mod, "==") || !strcmp(mod, "!=") || !strcmp(mod, ">") || !strcmp(mod, ">=") || 
 	         !strcmp(mod, "<") || !strcmp(mod, "<="))
 	{

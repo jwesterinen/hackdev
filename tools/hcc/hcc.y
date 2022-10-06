@@ -87,6 +87,10 @@ int is_void_expr = 0;
  */
 
 %right	'=' PE ME TE DE RE
+%left   LOR
+%left   LAND
+%left   OR
+%left   AND
 %left	'|'
 %left	'^'
 %left	'&'
@@ -94,6 +98,7 @@ int is_void_expr = 0;
 %left	'<' '>' GE LE
 %left	'+' '-'
 %left	'*' '/' '%'
+%right  '!' '~'
 %right	PP MM
 
 %%
@@ -486,8 +491,15 @@ binary
 	    }
 	| '!' binary
 	    {
-	        chk_var($2);
 	        gen_alu(ALU_NOT, "!");
+	    }
+	| '~' binary
+	    {
+	        gen_alu(ALU_INV, "~");
+	    }
+	| '-' binary
+	    {
+	        gen_alu(ALU_NEG, "-");
 	    }
 	| binary '+' binary
 	    {
@@ -544,6 +556,14 @@ binary
 	| binary '^' binary
 	    {
 	        gen_alu(ALU_XOR, "^");
+	    }
+	| binary AND binary
+	    {
+	        gen_alu(ALU_LAND, "&&");
+	    }
+	| binary OR binary
+	    {
+	        gen_alu(ALU_LOR, "||");
 	    }
 	| Identifier '=' binary
 	    { 

@@ -48,6 +48,10 @@
 #define ALU_NEG     "neg"       // negate (-)
 #define ALU_NOT     "!"         // logical inversion (!)
 
+// OP_ALU logical op modifiers
+#define ALU_LAND    "&&"        // logical AND
+#define ALU_LOR     "||"        // logical OR
+
 void gen_begin_prog();
 void gen_end_prog();
 void gen_alu(const char *mod, const char *comment);

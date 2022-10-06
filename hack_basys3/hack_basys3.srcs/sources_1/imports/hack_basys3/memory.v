@@ -44,8 +44,9 @@ module memory (
     output [11:0] rgbOut,
     
     // I/0 signals
-    output [15:0] LEDS,         // on-board LEDs
-    inout [7:0] GPIO,           // GPIO on Pmod connector JB[1]-JB[4], JB[7]-JB[10]
+    output [15:0] ledData,      // on-board LED data
+    //inout [7:0] GPIO,           // GPIO on Pmod connector JB[1]-JB[4], JB[7]-JB[10]
+    inout [7:0] gpioData,       // GPIO on Pmod connector JB[1]-JB[4], JB[7]-JB[10]
     input [15:0] switchData,    // on-board switches
     input  btnU,                // on-board buttons 'Up', 'Left', 'Right', 'Down'
     input  btnL,
@@ -61,14 +62,15 @@ module memory (
     wire [15:0] ramData;        // individual data buses for the members of the memory map
     wire [15:0] screenData;
     wire [15:0] keyboardData;
-    wire [15:0] gpioData;
+    //wire [15:0] gpioData;
     wire [15:0] buttonData = {btnU, btnL, btnR, btnD};
     reg screenEn;               // memory element enable signals
 
     RamSinglePort #(.DATA_WIDTH(16), .ADDR_WIDTH(14)) ram16k(clk, address[13:0], dataIn, ramLoad, ramData);
     screen screen(clk_100Mhz, clk, address[12:0], dataIn, screenLoad, screenData, reset, hsync, vsync, rgbOut);
     keyboard keyboard(PS2Clk, PS2Data, keyboardData);
-    ioports ioports(clk, dataIn, ledLoad, gpioDir, gpioLoad, LEDS, GPIO, gpioData);
+    //ioports ioports(clk, dataIn, ledLoad, ledData, gpioDir, gpioLoad, GPIO, gpioData);
+    ioports ioports(clk, dataIn, ledLoad, ledData, gpioDir, gpioLoad, gpioData);
  
  
     // memory write decoding
@@ -103,6 +105,7 @@ module memory (
     assign dataOut = (address >= 16'h0000 && address < 16'h2000) ? ramData :
                      (address >= 16'h4000 && address < 16'h6000) ? screenData :
                      (address == 16'h6000) ? keyboardData : 
+                     (address == 16'h7000) ? ledData : 
                      (address == 16'h7001) ? gpioData : 
                      (address == 16'h7003) ? switchData : 
                      (address == 16'h7004) ? buttonData : 0;

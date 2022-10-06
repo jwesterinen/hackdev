@@ -32,6 +32,8 @@ module screen (
     );
     
     // VGA controller
+    // NOTE: the VGA controller skews the horizontal display 19 pixels to the left so the first top/left pixel
+    //       to be displayed is (19,0)
     // TODO: the controller needs to be changed to use the 25MHz clock
     vga(clk_100MHz, reset, hsync, vsync, video_on, pixelClk, pixelX, pixelY);
 

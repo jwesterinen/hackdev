@@ -1,30 +1,36 @@
 #include <hack_stdlib.h>
 
+#define SCREEN 16384            // 0x4000
+#define FB_SIZE 8192            // 0x2000
+
+void FillScreen(int data)
+{
+    int dest = SCREEN;
+
+    while (dest < SCREEN + FB_SIZE)
+    {
+        *dest = *dest | data;
+        dest = dest + 16;
+    }
+}
+
 int main()
 {
-    int* dest = 16384;
-    int i, j, data;
-    
-    while (dest < 24576)
-    {
-        j = 0;
-        while (j < 16)
-        {
-            //data = 1;
-            data = 32768;
-            if (j == 15)
-                data = 21845;
-            else if ((j & 1) == 0)
-                data = 0;
-            i = 0;
-            while (i < 32)
-            {
-                *dest = data;
-                dest = dest + 1;
-                i = i + 1;
-            }
-            j = j + 1;
-        }
-    }
+    FillScreen(1);
+    FillScreen(2);
+    FillScreen(4);
+    FillScreen(8);
+    FillScreen(10);
+    FillScreen(20);
+    FillScreen(40);
+    FillScreen(80);
+    FillScreen(100);
+    FillScreen(200);
+    FillScreen(400);
+    FillScreen(800);
+    FillScreen(1000);
+    FillScreen(2000);
+    FillScreen(4000);
+    FillScreen(8000);
 }
     

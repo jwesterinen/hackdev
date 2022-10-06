@@ -39,6 +39,8 @@ other           .
 "%="                        return RE;
 "++"                        return PP;
 "--"                        return MM;
+"||"                        return OR;
+"&&"                        return AND;
 
 {letter}{letter_or_digit}*  {
                                 s_lookup(Identifier);
